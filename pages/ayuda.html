@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ayuda — Rutas Eco-Comunitarias</title>
+  <link rel="stylesheet" href="/src/styles.css">
+  
+  <!-- Script anti-flash: aplica tema inmediatamente -->
+  <script>
+    (function() {
+      const contrasteGuardado = localStorage.getItem('contrasteAlto');
+      if (contrasteGuardado === 'true') {
+        document.documentElement.setAttribute('data-contraste', 'alto');
+      }
+    })();
+  </script>
+</head>
+
+<body>
+  <header class="cabecera">
+    <div class="cabecera__contenido">
+  
+      <div class="cabecera__izq">
+        <img src="/src/logo-placeholder.svg" alt="Logo Plataforma" class="logo">
+        <h1 class="nombre-sistema">Rutas Eco-Comunitarias</h1>
+      </div>
+  
+      <div class="menu-colapsable" id="menu-colapsable">
+        <nav class="menu-horizontal" aria-label="Menú principal">
+          <ul id="menuItems" class="menu__lista--horizontal">
+            
+            <li><a href="/index.html" class="menu__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+              <span data-i18n="nav.inicio">Inicio</span>
+            </a></li>
+            
+            <li><a href="/pages/rutas.html" class="menu__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <span data-i18n="nav.rutas">Rutas</span>
+            </a></li>
+            
+            <li><a href="/pages/novedades.html" class="menu__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+              <span data-i18n="nav.novedades">Novedades</span>
+            </a></li>
+            
+            <li><a href="/pages/ayuda.html" class="menu__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+              <span data-i18n="nav.ayuda">Ayuda</span>
+            </a></li>
+            
+            <li><a href="#" class="menu__item" id="abrir-accesibilidad">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="5.5" r="2.5"></circle><path d="M15.5 21.5V16c0-1.7-1.3-3-3-3s-3 1.3-3 3v5.5"></path><path d="M15.5 11.5c1.4 1.4 1.4 3.6 0 5"></path><path d="M8.5 11.5c-1.4 1.4-1.4 3.6 0 5"></path></svg>
+              <span data-i18n="nav.accesibilidad">Accesibilidad</span>
+            </a></li>
+
+          </ul>
+        </nav>
+  
+        <div class="cabecera__der">
+          <button class="boton" id="boton-idioma">🌐 ES</button>
+          <a href="/pages/registro.html" class="boton">Registrarse</a>
+          <a href="/pages/login.html" class="boton" data-i18n="btn.iniciar-sesion">Iniciar Sesion</a>
+          <button id="boton-accesibilidad" class="boton" data-i18n="btn.modo-oscuro">Modo oscuro</button>
+        </div>
+      </div>
+      
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+  
+    </div>
+  </header>
+
+  <main class="contenido">
+    <!-- Hero Section para Ayuda -->
+    <section class="hero hero--ayuda" aria-labelledby="titulo-ayuda">
+      <div class="hero__fondo">
+        <div class="hero__overlay"></div>
+      </div>
+      <div class="hero__contenido">
+        <div class="hero__texto">
+          <h1 id="titulo-ayuda" class="hero__titulo" data-i18n="ayuda.titulo">
+            Centro de
+            <span class="hero__destacado">Ayuda</span>
+          </h1>
+          <p class="hero__descripcion" data-i18n="ayuda.descripcion">
+            Encuentra respuestas a tus preguntas y aprende a usar todas las funcionalidades de nuestra plataforma.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navegación de Ayuda -->
+    <section class="ayuda-navegacion" aria-label="Navegación de ayuda">
+      <div class="container">
+        <div class="ayuda-tabs">
+          <button class="ayuda-tab activo" data-tab="general" data-i18n="ayuda.tabs.general">General</button>
+          <button class="ayuda-tab" data-tab="rutas" data-i18n="ayuda.tabs.rutas">Rutas</button>
+          <button class="ayuda-tab" data-tab="filtros" data-i18n="ayuda.tabs.filtros">Filtros</button>
+          <button class="ayuda-tab" data-tab="accesibilidad" data-i18n="ayuda.tabs.accesibilidad">Accesibilidad</button>
+          <button class="ayuda-tab" data-tab="contacto" data-i18n="ayuda.tabs.contacto">Contacto</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contenido de Ayuda -->
+    <section class="ayuda-contenido">
+      <div class="container">
+        <!-- Pestaña General -->
+        <div id="tab-general" class="ayuda-tab-content activo">
+          <h2 data-i18n="ayuda.faq.titulo">Preguntas Frecuentes</h2>
+          
+          <div class="faq-grid">
+            <div class="faq-item">
+              <h3 data-i18n="ayuda.faq.pregunta1">¿Qué es Rutas Eco-Comunitarias?</h3>
+              <p data-i18n="ayuda.faq.respuesta1">Es una plataforma que conecta a los amantes de la naturaleza con rutas eco-turísticas sostenibles. Promovemos el turismo responsable que beneficia a las comunidades locales y protege el medio ambiente.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3 data-i18n="ayuda.faq.pregunta2">¿Cómo funciona el sistema de puntuación?</h3>
+              <p data-i18n="ayuda.faq.respuesta2">Las rutas se califican del 1 al 5 estrellas basándose en las experiencias de usuarios anteriores. Una puntuación alta indica rutas bien mantenidas, seguras y con excelente experiencia.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3 data-i18n="ayuda.faq.pregunta3">¿Es gratis usar la plataforma?</h3>
+              <p data-i18n="ayuda.faq.respuesta3">Sí, nuestra plataforma es completamente gratuita. Solo necesitas registrarte para acceder a todas las funcionalidades, guardar rutas favoritas y compartir tus experiencias.</p>
+            </div>
+
+            <div class="faq-item">
+              <h3 data-i18n="ayuda.faq.pregunta4">¿Cómo puedo contribuir con nuevas rutas?</h3>
+              <p data-i18n="ayuda.faq.respuesta4">Si eres un guía local o conoces rutas eco-turísticas, puedes contactarnos para agregar nuevas rutas. Nuestro equipo las revisará y las publicará en la plataforma.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pestaña Rutas -->
+        <div id="tab-rutas" class="ayuda-tab-content">
+          <h2 data-i18n="ayuda.rutas.titulo">Guía de Rutas</h2>
+          
+          <div class="guia-seccion">
+            <h3>🔍 Cómo Buscar Rutas</h3>
+            <ol class="guia-lista">
+              <li>Ve a la página de <strong>Rutas</strong> desde el menú principal</li>
+              <li>Usa la barra de búsqueda para escribir el nombre, ubicación o descripción</li>
+              <li>Las sugerencias aparecerán automáticamente mientras escribes</li>
+              <li>Haz clic en una sugerencia para seleccionarla</li>
+            </ol>
+          </div>
+
+          <div class="guia-seccion">
+            <h3>🎯 Cómo Filtrar Rutas</h3>
+            <ul class="guia-lista">
+              <li><strong>Dificultad:</strong> Fácil, Media, Difícil</li>
+              <li><strong>Tipo:</strong> Senderismo, Ciclismo, Observación, Fotografía</li>
+              <li><strong>Duración:</strong> Corta (menos de 1h), Media (1-3h), Larga (más de 3h)</li>
+              <li><strong>Distancia:</strong> Corta (menos de 2km), Media (2-5km), Larga (más de 5km)</li>
+            </ul>
+          </div>
+
+          <div class="guia-seccion">
+            <h3>👁️ Vista Previa de Rutas</h3>
+            <ol class="guia-lista">
+              <li>Haz clic en <strong>"Vista Previa"</strong> en cualquier ruta</li>
+              <li>Explora el mapa interactivo y los puntos ecológicos</li>
+              <li>Revisa la información detallada de la ruta</li>
+              <li>Usa los botones para guardar, iniciar o compartir la ruta</li>
+            </ol>
+          </div>
+        </div>
+
+        <!-- Pestaña Filtros -->
+        <div id="tab-filtros" class="ayuda-tab-content">
+          <h2 data-i18n="ayuda.filtros.titulo">Guía de Filtros</h2>
+          
+          <div class="filtros-guia">
+            <div class="filtro-explicacion">
+              <h3>🔍 Búsqueda por Texto</h3>
+              <p>Escribe cualquier término en la barra de búsqueda. Busca en nombres, descripciones y ubicaciones de las rutas.</p>
+              <div class="ejemplo">
+                <strong>Ejemplo:</strong> "bosque", "cascada", "aves", "fotografía"
+              </div>
+            </div>
+
+            <div class="filtro-explicacion">
+              <h3>⚡ Filtro de Dificultad</h3>
+              <ul>
+                <li><strong>Fácil:</strong> Caminatas cortas, terreno plano, ideal para principiantes</li>
+                <li><strong>Media:</strong> Rutas moderadas con algunas subidas, experiencia básica recomendada</li>
+                <li><strong>Difícil:</strong> Rutas exigentes con terreno accidentado, para usuarios experimentados</li>
+              </ul>
+            </div>
+
+            <div class="filtro-explicacion">
+              <h3>🏷️ Tipos de Rutas</h3>
+              <ul>
+                <li><strong>Senderismo:</strong> Caminatas por senderos naturales</li>
+                <li><strong>Ciclismo:</strong> Rutas en bicicleta por senderos y caminos</li>
+                <li><strong>Observación:</strong> Rutas especializadas para observar fauna y flora</li>
+                <li><strong>Fotografía:</strong> Rutas con los mejores puntos de vista fotográficos</li>
+              </ul>
+            </div>
+
+            <div class="filtro-explicacion">
+              <h3>⏱️ Duración y Distancia</h3>
+              <p>Combina filtros de duración y distancia para encontrar rutas que se ajusten a tu tiempo disponible y condición física.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pestaña Accesibilidad -->
+        <div id="tab-accesibilidad" class="ayuda-tab-content">
+          <h2 data-i18n="ayuda.accesibilidad.titulo">Funciones de Accesibilidad</h2>
+          
+          <div class="accesibilidad-info">
+            <div class="accesibilidad-item">
+              <h3>🌙 Modo Oscuro</h3>1
+              <p>Reduce la fatiga visual y mejora la experiencia en ambientes con poca luz. Actívalo desde el botón en la cabecera.</p>
+            </div>
+
+            <div class="accesibilidad-item">
+              <h3>🔍 Texto Ampliado</h3>
+              <p>Usa las funciones de zoom del navegador (Ctrl + +) para ampliar el texto y mejorar la legibilidad.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pestaña Contacto -->
+        <div id="tab-contacto" class="ayuda-tab-content">
+          <h2 data-i18n="ayuda.contacto.titulo">Contacto y Soporte</h2>
+          
+          <div class="contacto-info">
+            <div class="contacto-item">
+              <h3>📧 Email de Soporte</h3>
+              <p>soporte@rutasecocomunitarias.com</p>
+              <p>Respuesta en 24 horas</p>
+            </div>
+
+            <div class="contacto-item">
+              <h3>📱 Teléfono</h3>
+              <p>+1 (555) 123-4567</p>
+              <p>Lunes a Viernes, 9:00 - 18:00</p>
+            </div>
+            <div class="contacto-item">
+              <h3>📝 Formulario de Contacto</h3>
+              <form class="formulario-contacto">
+                <div class="formulario-grupo">
+                  <label for="nombre">Nombre</label>
+                  <input type="text" id="nombre" name="nombre" required>
+                </div>
+                <div class="formulario-grupo">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="formulario-grupo">
+                  <label for="asunto">Asunto</label>
+                  <select id="asunto" name="asunto" required>
+                    <option value="">Seleccionar asunto</option>
+                    <option value="tecnico">Problema técnico</option>
+                    <option value="nueva-ruta">Sugerir nueva ruta</option>
+                    <option value="cuenta">Problema con mi cuenta</option>
+                    <option value="otro">Otro</option>
+                  </select>
+                </div>
+                <div class="formulario-grupo">
+                  <label for="mensaje">Mensaje</label>
+                  <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="boton primario">Enviar Mensaje</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie-profesional">
+    <div class="pie-contenido">
+      
+      <div class="pie-columna pie-columna--brand">
+        <img src="/src/logo-placeholder.svg" alt="Logo Plataforma" class="logo">
+        <h3 class="nombre-sistema">Rutas Eco-Comunitarias</h3>
+        <p>Conectando la naturaleza con la comunidad de forma sostenible.</p>
+      </div>
+      
+      <div class="pie-columna">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="/index.html" class="pie-link" data-i18n="nav.inicio">Inicio</a></li>
+          <li><a href="/pages/rutas.html" class="pie-link" data-i18n="nav.rutas">Rutas</a></li>
+          <li><a href="/pages/novedades.html" class="pie-link" data-i18n="nav.novedades">Novedades</a></li>
+        </ul>
+      </div>
+      
+      <div class="pie-columna">
+        <h4>Soporte</h4>
+        <ul>
+          <li><a href="/pages/ayuda.html" class="pie-link" id="link-soporte" data-i18n="footer.soporte">Ayuda / Contacto</a></li>
+          <li><a href="/pages/terminos.html" class="pie-link" target="_blank" rel="noopener noreferrer">Términos y Privacidad</a></li>
+          <li><a href="/pages/ayuda.html#tab-accesibilidad" class="pie-link">Accesibilidad</a></li>
+        </ul>
+      </div>
+      
+      <div class="pie-columna">
+        <h4>Síguenos</h4>
+        <div class="pie-sociales">
+          <a href="#" class="pie-social-link" aria-label="Facebook">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="#" class="pie-social-link" aria-label="Instagram">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.227-1.664 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.664 4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.62c-3.14 0-3.486.01-4.708.066-2.678.122-3.83 1.274-3.952 3.952C3.27 8.92 3.26 9.266 3.26 12s.01 3.08.066 4.708c.122 2.678 1.274 3.83 3.952 3.952C8.51 20.73 8.86 20.74 12 20.74s3.08-.01 4.708-.066c2.678-.122 3.83-1.274 3.952-3.952C20.73 15.08 20.74 14.734 20.74 12s-.01-3.08-.066-4.708c-.122-2.678-1.274-3.83-3.952-3.952C15.09 3.27 14.74 3.26 12 3.26zm0 2.92c-2.92 0-5.28 2.36-5.28 5.28s2.36 5.28 5.28 5.28 5.28-2.36 5.28-5.28-2.36-5.28-5.28-5.28zm0 8.52c-1.8 0-3.24-1.44-3.24-3.24s1.44-3.24 3.24-3.24 3.24 1.44 3.24 3.24-1.44 3.24-3.24 3.24zM16.965 6.57c-.7 0-1.275.575-1.275 1.275s.575 1.275 1.275 1.275 1.275-.575 1.275-1.275-.575-1.275-1.275-1.275z"></path></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+    
+    <div class="pie-bottom-bar">
+      <small>© <span id="ano"></span> <span data-i18n="footer.derechos">Rutas Eco-Comunitarias</span>. Todos los derechos reservados.</small>
+    </div>
+  </footer>
+
+  <!-- Modal de Accesibilidad -->
+  <div id="modal-accesibilidad" class="modal" role="dialog" aria-labelledby="modal-accesibilidad-titulo" aria-hidden="true">
+    <div class="modal__overlay"></div>
+    <div class="modal__contenido modal__contenido--accesibilidad">
+      <div class="modal__header">
+        <h3 id="modal-accesibilidad-titulo" class="modal__titulo" data-i18n="accesibilidad.titulo">Configuración de Accesibilidad</h3>
+        <button class="modal__cerrar" id="modal-accesibilidad-cerrar" aria-label="Cerrar modal" data-i18n="btn.cerrar">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="modal__body">
+        <div class="accesibilidad-opciones">
+          <div class="accesibilidad-opcion">
+            <h4 data-i18n="accesibilidad.modo-oscuro">🌙 Modo Oscuro</h4>
+            <p data-i18n="accesibilidad.modo-oscuro.desc">Reduce la fatiga visual en ambientes con poca luz</p>
+            <button class="boton" id="toggle-modo-oscuro" data-i18n="accesibilidad.modo-oscuro">Activar Modo Oscuro</button>
+          </div>
+
+          <div class="accesibilidad-opcion">
+            <h4 data-i18n="accesibilidad.texto-ampliado">🔍 Texto Ampliado</h4>
+            <p data-i18n="accesibilidad.texto-ampliado.desc">Amplía el tamaño del texto para mejor legibilidad</p>
+            <div class="control-texto">
+              <button class="boton" id="reducir-texto">A-</button>
+              <span id="tamaño-texto">100%</span>
+              <button class="boton" id="aumentar-texto">A+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { inicializarTema, actualizarAnio, inicializarMenu } from "/src/scripts/comunes.ts";
+    import { inicializarIdiomas, inicializarAccesibilidad } from "/src/scripts/idiomas.js";
+
+    document.addEventListener("DOMContentLoaded", () => {
+      inicializarTema();
+      actualizarAnio();
+      inicializarMenu();
+      inicializarIdiomas();
+      inicializarAccesibilidad();
+      inicializarAyuda();
+    });
+
+    function inicializarAyuda() {
+      // Navegación por pestañas
+      const tabs = document.querySelectorAll('.ayuda-tab');
+      const contents = document.querySelectorAll('.ayuda-tab-content');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const targetTab = tab.dataset.tab;
+          
+          // Remover clase activa de todos los tabs
+          tabs.forEach(t => t.classList.remove('activo'));
+          contents.forEach(c => c.classList.remove('activo'));
+          
+          // Activar tab seleccionado
+          tab.classList.add('activo');
+          document.getElementById(`tab-${targetTab}`).classList.add('activo');
+        });
+      });
+
+      // Formulario de contacto
+      const formulario = document.querySelector('.formulario-contacto');
+      if (formulario) {
+        formulario.addEventListener('submit', (e) => {
+          e.preventDefault();
+          alert('¡Mensaje enviado! Te contactaremos pronto.');
+        });
+      }
+    }
+  </script>
+</body>
+</html>
